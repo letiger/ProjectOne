@@ -1,5 +1,6 @@
 package za.ac.cput.domain;
 
+import org.junit.Assert;
 import za.ac.cput.domain.Asset;
 import za.ac.cput.domain.Equipment;
 import za.ac.cput.domain.Hardware;
@@ -22,21 +23,47 @@ public class AssetTest {
     @Before
     public void setup() throws Exception{}
 
+    //create ann asset and test it
     @Test
-    public void createAsset() throws Exception{
+    public void CreateAsset() throws Exception{
+        String ownerName = "Travis Wade";
         List<Software> softwareList = new ArrayList<Software>();
         List<Hardware> hardwareList= new ArrayList<Hardware>();
         List<Equipment> equipmentList= new ArrayList<Equipment>();
         Map<String,String> values = new HashMap<String,String>();
 
-        values.put("Name", "2015-05-01-12:00");
-        values.put("Code", "201505011200");
+        values.put("Name", ownerName);
+        values.put("Code", "1234qwerty");
 
         Asset asset = AssetFactory
-                .createAsset(values);
+                .createAsset(softwareList, hardwareList, equipmentList, values);
+        System.out.println(asset.getName());
+        assertEquals(ownerName, asset.getName());
+    }
 
-        assertEquals("201505011200", asset.getCode());
+    //update the asset entry
+    @Test
+    public void UpdateAsset() throws Exception{
+        String ownerName = "Travis Wade";
+        List<Software> softwareList = new ArrayList<Software>();
+        List<Hardware> hardwareList= new ArrayList<Hardware>();
+        List<Equipment> equipmentList= new ArrayList<Equipment>();
+        Map<String,String> values = new HashMap<String,String>();
 
+        values.put("Name", ownerName);
+        values.put("Code", "1234qwerty");
+
+        Asset asset = AssetFactory
+                .createAsset(softwareList, hardwareList, equipmentList, values);
+
+        Asset newAsset = new Asset
+                .Builder(asset.getCode())
+                .copy(asset)
+                .name("Raymond Newton")
+                .build();
+        Assert.assertEquals("1234qwerty", newAsset.getCode());
+        Assert.assertEquals("Raymond Newton", newAsset.getName());
+        Assert.assertEquals("Travis Wade", asset.getName());
     }
 
 }
