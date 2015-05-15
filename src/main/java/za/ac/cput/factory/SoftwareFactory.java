@@ -1,15 +1,15 @@
-package za.ac.cput.fatory;
+package za.ac.cput.factory;
 
-import za.ac.cput.domain.User;
+import za.ac.cput.domain.Software;
 
 import java.util.Map;
 
 /**
  * Created by student on 2015/05/03.
  */
-public class UserFactory {
-    public static User createUser(Map<String,String> value){
-        User object_one = new User
+public class SoftwareFactory {
+    public static Software createSoftware(Map<String,String> value){
+        Software object_one = new Software
                 .Builder(value.get("Code"))
                 .name("Asset")
                 .build();

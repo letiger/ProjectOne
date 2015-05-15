@@ -1,15 +1,15 @@
-package za.ac.cput.fatory;
+package za.ac.cput.factory;
 
-import za.ac.cput.domain.Region;
+import za.ac.cput.domain.User;
 
 import java.util.Map;
 
 /**
  * Created by student on 2015/05/03.
  */
-public class RegionFactory {
-    public static Region createRegion(Map<String,String> value){
-        Region object_one = new Region
+public class UserFactory {
+    public static User createUser(Map<String,String> value){
+        User object_one = new User
                 .Builder(value.get("Code"))
                 .name("Asset")
                 .build();

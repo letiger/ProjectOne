@@ -1,15 +1,15 @@
-package za.ac.cput.fatory;
+package za.ac.cput.factory;
 
-import za.ac.cput.domain.Hardware;
+import za.ac.cput.domain.Region;
 
 import java.util.Map;
 
 /**
  * Created by student on 2015/05/03.
  */
-public class HardwareFactory {
-    public static Hardware createHardware(Map<String,String> value){
-        Hardware object_one = new Hardware
+public class RegionFactory {
+    public static Region createRegion(Map<String,String> value){
+        Region object_one = new Region
                 .Builder(value.get("Code"))
                 .name("Asset")
                 .build();
