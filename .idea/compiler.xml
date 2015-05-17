@@ -26,5 +26,8 @@
         <module name="AssetManagement" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AssetManagement" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
