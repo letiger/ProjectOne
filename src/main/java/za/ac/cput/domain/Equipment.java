@@ -1,9 +1,6 @@
 package za.ac.cput.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -13,12 +10,16 @@ import java.util.List;
 @Entity
 public class Equipment implements Serializable {
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(unique = true)//makes the code unique
     private String code;
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="equipment_id")
     private List<Region> list;
 
 

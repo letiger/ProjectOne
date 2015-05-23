@@ -1,10 +1,6 @@
 package za.ac.cput.domain;
 
 import org.junit.Assert;
-import za.ac.cput.domain.Asset;
-import za.ac.cput.domain.Equipment;
-import za.ac.cput.domain.Hardware;
-import za.ac.cput.domain.Software;
 import za.ac.cput.factory.AssetFactory;
 import org.junit.Before;
 import org.junit.Test;

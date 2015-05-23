@@ -1,9 +1,6 @@
 package za.ac.cput.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -19,6 +16,8 @@ public class Software implements Serializable {
     @Column(unique = true)//makes the code unique
     private String code;
     private String name;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="software_id")
     private List<SoftwareType> softwareList;
 
 

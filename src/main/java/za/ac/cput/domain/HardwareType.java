@@ -3,6 +3,7 @@ package za.ac.cput.domain;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -10,11 +11,13 @@ import java.io.Serializable;
  */
 public class HardwareType implements Serializable {
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(unique = true)//makes the code unique
     private String code;
+
     private String name;
 
 
