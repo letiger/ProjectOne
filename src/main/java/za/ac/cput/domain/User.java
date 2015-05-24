@@ -3,9 +3,7 @@ package za.ac.cput.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.security.acl.Owner;
 import java.util.List;
-
 /**
  * Created by student on 2015/05/03.
  */

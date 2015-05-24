@@ -4,23 +4,23 @@ package za.ac.cput.domain;
  * Created by student on 2015/05/03.
  */
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
 public class OwnerType implements Serializable {
 
-@javax.persistence.Id
+@Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 private Long id;
 @Column(unique = true)//makes the code unique
 private String code;
 private String name;
-private List<Asset> list;
+
+@OneToMany(cascade = CascadeType.ALL)
+@JoinColumn(name="owner_id")
+private List<Asset> assetList;
 
 
 private OwnerType(){
@@ -30,7 +30,7 @@ public OwnerType(Builder builder){
         this.id=builder.id;
         this.code=builder.code;
         this.name=builder.name;
-        this.list=builder.list;
+        this.assetList=builder.assetList;
         }
 
 public Long getId() {
@@ -47,14 +47,14 @@ public String getName() {
 
 
 public List<Asset> getList() {
-        return list;
+        return assetList;
         }
 
 public static class Builder{
     private long id;
     private String code;
     private String name;
-    private List<Asset> list;
+    private List<Asset> assetList;
 
     public Builder(String code){
         this.code=code;
@@ -71,8 +71,8 @@ public static class Builder{
     }
 
 
-    public Builder list(List<Asset> value){
-        this.list=value;
+    public Builder assetList(List<Asset> value){
+        this.assetList=value;
         return this;
     }
 
@@ -80,7 +80,7 @@ public static class Builder{
         this.id=value.id;
         this.code=value.code;
         this.name=value.name;
-        this.list=value.list;
+        this.assetList=value.assetList;
         return this;
     }
 

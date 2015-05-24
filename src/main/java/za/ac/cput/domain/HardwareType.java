@@ -1,14 +1,12 @@
 package za.ac.cput.domain;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by student on 2015/05/03.
  */
+@Entity
 public class HardwareType implements Serializable {
 
     @Id

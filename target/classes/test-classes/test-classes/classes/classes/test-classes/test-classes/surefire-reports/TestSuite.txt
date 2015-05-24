@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 11.495 sec <<< FAILURE!
+read(za.ac.cput.repository.AssetCrudTest)  Time elapsed: 0.011 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at za.ac.cput.repository.AssetCrudTest.read(AssetCrudTest.java:85)

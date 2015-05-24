@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Created by student on 2015/05/03.
  */
+@Entity
 public class Asset implements Serializable {
 
     @Id

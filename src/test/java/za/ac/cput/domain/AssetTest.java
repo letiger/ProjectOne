@@ -1,7 +1,7 @@
 package za.ac.cput.domain;
 
 import org.junit.Assert;
-import za.ac.cput.factory.AssetFactory;
+import za.ac.cput.config.factory.AssetFactory;
 import org.junit.Before;
 import org.junit.Test;
 

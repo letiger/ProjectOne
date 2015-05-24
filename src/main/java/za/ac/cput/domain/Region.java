@@ -1,6 +1,7 @@
 package za.ac.cput.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import java.io.Serializable;
 /**
  * Created by student on 2015/05/03.
  */
+@Entity
 public class Region implements Serializable {
 
     @javax.persistence.Id
